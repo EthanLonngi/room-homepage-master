@@ -15,13 +15,14 @@ html {
 body {
   font-size: 1.2rem;
   font-family: "Spartan", sans-serif;
+  height: 100%;
 }
 img {
   display: block;
 }
 
 .header {
-  width: 55vw;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,8 +38,11 @@ img {
   align-items: center;
   justify-content: space-between;
 }
+.header__title {
+  transform: translateX(29px);
+}
 .header__nav {
-  width: 100vw;
+  width: 200%;
   height: 100px;
   background-color: var(--White);
   display: flex;
@@ -60,7 +64,7 @@ img {
   content: "";
   width: 0%;
   height: 2px;
-  background-color: white;
+  background-color: var(--Black);
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -250,6 +254,12 @@ img {
   .header__link {
     color: var(--White);
     font-weight: 500;
+  }
+  .header__link::after {
+    background-color: var(--White);
+  }
+  .header__title {
+    transform: translateX(0);
   }
   .header__menu-icon-container {
     display: none;
