@@ -8,6 +8,9 @@ const sliderTitle = document.querySelectorAll(".info__title");
 const sliderText = document.querySelectorAll(".info__text");
 const overlay = document.querySelector(".overlay");
 const slides = sliderImages.length - 1;
+const sliderActiveStates = [sliderImages, sliderTitle, sliderText];
+
+console.log(sliderActiveStates);
 
 headerMenuIcon.forEach((element) => {
   element.addEventListener("click", () => {
@@ -16,36 +19,31 @@ headerMenuIcon.forEach((element) => {
   });
 });
 
+function setState(slide) {
+  sliderActiveStates.forEach((element) => {
+    element.item(slide).classList.toggle("active");
+    console.log(element.item(slide));
+  });
+}
+
 let currentSlide = 0;
 sliderLeft.addEventListener("click", () => {
-  sliderImages.item(currentSlide).classList.toggle("active");
-  sliderTitle.item(currentSlide).classList.toggle("active");
-  sliderText.item(currentSlide).classList.toggle("active");
+  setState(currentSlide);
   currentSlide -= 1;
   if (currentSlide < 0) {
     currentSlide = slides;
-    sliderImages.item(currentSlide).classList.toggle("active");
-    sliderTitle.item(currentSlide).classList.toggle("active");
-    sliderText.item(currentSlide).classList.toggle("active");
+    setState(currentSlide);
   } else if (currentSlide >= 0) {
-    sliderImages.item(currentSlide).classList.toggle("active");
-    sliderTitle.item(currentSlide).classList.toggle("active");
-    sliderText.item(currentSlide).classList.toggle("active");
+    setState(currentSlide);
   }
 });
 sliderRight.addEventListener("click", () => {
-  sliderImages.item(currentSlide).classList.toggle("active");
-  sliderTitle.item(currentSlide).classList.toggle("active");
-  sliderText.item(currentSlide).classList.toggle("active");
+  setState(currentSlide);
   currentSlide += 1;
   if (currentSlide > slides) {
     currentSlide = 0;
-    sliderImages.item(currentSlide).classList.toggle("active");
-    sliderTitle.item(currentSlide).classList.toggle("active");
-    sliderText.item(currentSlide).classList.toggle("active");
+    setState(currentSlide);
   } else if (currentSlide <= slides) {
-    sliderImages.item(currentSlide).classList.toggle("active");
-    sliderTitle.item(currentSlide).classList.toggle("active");
-    sliderText.item(currentSlide).classList.toggle("active");
+    setState(currentSlide);
   }
 });
