@@ -141,6 +141,10 @@ img {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: 0.5s;
+}
+.info__link-arrow {
+  transition: 0.5s;
 }
 .info__link:hover {
   color: var(--Dark-Gray);
@@ -168,6 +172,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.5s;
 }
 .slider__left:hover {
   background-color: var(--Very-Dark-Gray);
@@ -178,6 +183,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.5s;
 }
 .slider__right:hover {
   background-color: var(--Very-Dark-Gray);
